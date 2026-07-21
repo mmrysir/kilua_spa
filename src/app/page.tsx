@@ -128,16 +128,7 @@ export default function Home() {
   };
 
   const handleMainCTA = () => {
-    // Default to the first popular item: Warm Herbal Oil Massage
-    setSelectedItem({
-      name: "Warm Herbal Oil Massage",
-      price: 35,
-      priceOptions: [
-        { label: "60 Mins", price: 35 },
-        { label: "30 Mins", price: 20 },
-      ],
-      description: "Very traditional and soothing massage done using warm herbal oil mixed with spices."
-    });
+    setSelectedItem(null);
     setIsModalOpen(true);
   };
 

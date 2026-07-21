@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { X, Calendar, Clock, User, Phone, MessageSquare, Leaf, DollarSign } from "lucide-react";
-import { MenuItem } from "@/data/menu";
+import { MenuItem, menuCategories } from "@/data/menu";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -20,30 +20,39 @@ export default function BookingModal({ isOpen, onClose, selectedItem }: BookingM
   const [time, setTime] = useState("");
   const [notes, setNotes] = useState("");
   const [selectedOption, setSelectedOption] = useState<{ label: string; price: number } | null>(null);
+  const [localItem, setLocalItem] = useState<MenuItem | null>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setLocalItem(selectedItem);
+    }
+  }, [isOpen, selectedItem]);
 
   // Initialize/reset selected option when item changes
   useEffect(() => {
-    if (selectedItem) {
-      if (selectedItem.priceOptions && selectedItem.priceOptions.length > 0) {
-        setSelectedOption(selectedItem.priceOptions[0]);
-      } else {
-        setSelectedOption(null);
-      }
+    if (localItem && localItem.priceOptions && localItem.priceOptions.length > 0) {
+      setSelectedOption(localItem.priceOptions[0]);
+    } else {
+      setSelectedOption(null);
     }
-  }, [selectedItem]);
+  }, [localItem]);
 
-  if (!isOpen || !selectedItem) return null;
+  if (!isOpen) return null;
 
-  const currentPrice = selectedOption ? selectedOption.price : selectedItem.price;
-  const currentDuration = selectedOption ? selectedOption.label : selectedItem.duration;
+  const currentPrice = localItem ? (selectedOption ? selectedOption.price : localItem.price) : 0;
+  const currentDuration = localItem ? (selectedOption ? selectedOption.label : localItem.duration) : "";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!localItem) {
+      alert("Please select a treatment first.");
+      return;
+    }
 
     // Context & Text formatting
     const serviceDetails = selectedOption 
-      ? `${selectedItem.name} (${selectedOption.label})` 
-      : `${selectedItem.name}${selectedItem.duration ? ` (${selectedItem.duration})` : ""}`;
+      ? `${localItem.name} (${selectedOption.label})` 
+      : `${localItem.name}${localItem.duration ? ` (${localItem.duration})` : ""}`;
 
     const message = 
 `*Kilua Spa & Massage*
@@ -112,52 +121,98 @@ ${notes ? `Special Requests / Notes:\n${notes}\n` : ""}`;
         {/* Service Details Card */}
         <div className="px-5 pb-3 shrink-0">
           <div className="px-4 py-3 border rounded-xl bg-[#FDFBF7] border-[#C5A059]/10">
-            <div className="flex items-start justify-between gap-3">
-              <div className="min-w-0">
-                <span className="text-[10px] uppercase tracking-wider font-semibold text-[#C5A059]">
-                  Selected Treatment
-                </span>
-                <h4 className="mt-0.5 font-serif font-medium text-[#2C3230] text-sm leading-snug">
-                  {selectedItem.name}
-                </h4>
-                {selectedItem.description && (
-                  <p className="mt-1 text-[11px] text-[#2C3230]/55 line-clamp-1">
-                    {selectedItem.description}
-                  </p>
-                )}
-              </div>
-              <div className="text-right shrink-0">
-                <span className="font-serif text-lg font-bold text-[#C5A059]">
-                  ${currentPrice}
-                </span>
-                {currentDuration && (
-                  <div className="text-[10px] text-[#2C3230]/50 font-medium">{currentDuration}</div>
-                )}
-              </div>
-            </div>
-
-            {/* Duration options */}
-            {selectedItem.priceOptions && selectedItem.priceOptions.length > 0 && (
-              <div className="mt-3 pt-3 border-t border-[#C5A059]/10">
-                <span className="text-[10px] uppercase tracking-wider font-semibold text-[#2C3230]/60 block mb-2">
-                  Choose Duration
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {selectedItem.priceOptions.map((opt) => (
+            {localItem ? (
+              <>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#C5A059]">
+                      Selected Treatment
+                    </span>
+                    <h4 className="mt-0.5 font-serif font-medium text-[#2C3230] text-sm leading-snug">
+                      {localItem.name}
+                    </h4>
+                    {localItem.description && (
+                      <p className="mt-1 text-[11px] text-[#2C3230]/55 line-clamp-1">
+                        {localItem.description}
+                      </p>
+                    )}
                     <button
-                      key={opt.label}
                       type="button"
-                      onClick={() => setSelectedOption(opt)}
-                      className={`px-3 py-1.5 text-xs rounded-full border transition-all duration-200 ${
-                        selectedOption?.label === opt.label
-                          ? "bg-[#C5A059] text-white border-transparent shadow-sm"
-                          : "bg-white text-[#2C3230] border-[#C5A059]/20 hover:border-[#C5A059]"
-                      }`}
+                      onClick={() => setLocalItem(null)}
+                      className="mt-2 text-[10px] text-red-500 hover:text-red-600 font-semibold uppercase tracking-wider flex items-center gap-1"
                     >
-                      {opt.label} — ${opt.price}
+                      <X className="w-3 h-3" /> Remove Selection
                     </button>
-                  ))}
+                  </div>
+                  <div className="text-right shrink-0">
+                    <span className="font-serif text-lg font-bold text-[#C5A059]">
+                      ${currentPrice}
+                    </span>
+                    {currentDuration && (
+                      <div className="text-[10px] text-[#2C3230]/50 font-medium">{currentDuration}</div>
+                    )}
+                  </div>
                 </div>
+
+                {/* Duration options */}
+                {localItem.priceOptions && localItem.priceOptions.length > 0 && (
+                  <div className="mt-3 pt-3 border-t border-[#C5A059]/10">
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-[#2C3230]/60 block mb-2">
+                      Choose Duration
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {localItem.priceOptions.map((opt) => (
+                        <button
+                          key={opt.label}
+                          type="button"
+                          onClick={() => setSelectedOption(opt)}
+                          className={`px-3 py-1.5 text-xs rounded-full border transition-all duration-200 ${
+                            selectedOption?.label === opt.label
+                              ? "bg-[#C5A059] text-white border-transparent shadow-sm"
+                              : "bg-white text-[#2C3230] border-[#C5A059]/20 hover:border-[#C5A059]"
+                          }`}
+                        >
+                          {opt.label} — ${opt.price}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="space-y-2">
+                <label className="text-[11px] uppercase tracking-wider font-semibold text-[#C5A059] block">
+                  Select a Treatment
+                </label>
+                <select
+                  className="w-full px-3 py-2 text-sm bg-white border border-[#C5A059]/30 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#C5A059] focus:border-[#C5A059]"
+                  onChange={(e) => {
+                    const selectedName = e.target.value;
+                    if (!selectedName) {
+                      setLocalItem(null);
+                      return;
+                    }
+                    for (const cat of menuCategories) {
+                      const item = cat.items.find((i) => i.name === selectedName);
+                      if (item) {
+                        setLocalItem(item);
+                        return;
+                      }
+                    }
+                  }}
+                  defaultValue=""
+                >
+                  <option value="" disabled>-- Choose a treatment --</option>
+                  {menuCategories.map((cat) => (
+                    <optgroup key={cat.id} label={cat.name}>
+                      {cat.items.map((item) => (
+                        <option key={item.name} value={item.name}>
+                          {item.name} - ${item.price}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
               </div>
             )}
           </div>
