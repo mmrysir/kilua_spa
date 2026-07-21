@@ -92,10 +92,7 @@ ${itemsText}
 ⏰ *Preferred Time:* ${time}
 ━━━━━━━━━━━━━━━━━━━━━
 
-${notes ? `✍️ *Special Requests / Notes:*\n${notes}\n` : ""}
-💵 *Payment:* Cash Accepted on Arrival
-
-Thank you! Looking forward to welcoming you. 🙏`;
+${notes ? `✍️ *Special Requests / Notes:*\n${notes}\n` : ""}`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${SPA_WHATSAPP_NUMBER}?text=${encodedMessage}`;
@@ -366,9 +363,6 @@ Thank you! Looking forward to welcoming you. 🙏`;
               <div className="flex justify-between items-center text-sm font-semibold">
                 <span className="text-[#2C3230]">Treatment Package Total</span>
                 <span className="font-serif text-lg text-[#C5A059] font-bold">${totalPrice}</span>
-              </div>
-              <div className="text-[10px] text-[#2C3230]/50 text-center tracking-wide uppercase font-semibold">
-                💵 Cash accepted on arrival &bull; No pre-payment required
               </div>
             </div>
           )}

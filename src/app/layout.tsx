@@ -19,17 +19,22 @@ export const metadata: Metadata = {
   description: "Experience luxury traditional massages, beauty therapies, and foot & hand grooming at Kilua Spa & Massage. Book your serene escape today via WhatsApp.",
   keywords: ["Kilua Spa", "Massage", "Spa", "Luxury Spa", "Zanzibar Spa", "Tropical Wellness", "Hot Stone Massage", "Traditional Massage", "Pedicure", "Manicure"],
   authors: [{ name: "Kilua Spa & Massage" }],
+  icons: {
+    icon: "/favicon-logo.jpg",
+    shortcut: "/favicon-logo.jpg",
+    apple: "/favicon-logo.jpg",
+  },
   openGraph: {
     title: "Kilua Spa & Massage | Luxury Tropical Wellness",
     description: "Serene, high-end traditional wellness and massage treatments. Book your serene escape.",
-    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "Kilua Spa logo" }],
+    images: [{ url: "/favicon-logo.jpg", width: 1200, height: 630, alt: "Kilua Spa logo" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Kilua Spa & Massage",
     description: "Premium spa and wellness treatments.",
-    images: ["/logo.jpg"],
+    images: ["/favicon-logo.jpg"],
   },
 };
 

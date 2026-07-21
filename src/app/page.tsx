@@ -147,7 +147,7 @@ export default function Home() {
       {/* Top Banner (Alerts/Notices) */}
       <div className="w-full bg-[#2C3230] text-[#FDFBF7] text-center py-2 px-4 text-xs tracking-wider uppercase font-semibold flex items-center justify-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full bg-[#C5A059] animate-pulse" />
-        <span>Tropical Sanctuary &bull; Traditional Wellness &bull; Cash Accepted on Arrival</span>
+        <span>Tropical Sanctuary &bull; Traditional Wellness</span>
       </div>
 
       {/* Header / Navbar */}
@@ -506,7 +506,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Booking Notice & Cash Accepted Banner */}
+      {/* Booking Notice Banner */}
       <section className="py-12 bg-gradient-to-br from-[#2C3230] to-[#1A1F1E] text-white">
         <div className="max-w-5xl mx-auto px-4 text-center space-y-6">
           <Leaf className="w-8 h-8 text-[#C5A059] mx-auto animate-pulse" />
@@ -523,10 +523,6 @@ export default function Home() {
             <span className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-[#C5A059]" />
               Flexible Rescheduling
-            </span>
-            <span className="flex items-center gap-2">
-              <CreditCard className="w-4 h-4 text-[#C5A059]" />
-              * Cash Accepted on Arrival
             </span>
           </div>
 
@@ -565,9 +561,6 @@ export default function Home() {
             <p className="text-xs text-white/60 leading-relaxed">
               Traditional and organic tropical wellness treatments tailored for local residents and global holidaymakers seeking complete rejuvenation.
             </p>
-            <div className="text-xs text-white/50">
-              Payments: <span className="font-semibold text-white">* Cash Accepted</span>
-            </div>
           </div>
 
           {/* Col 2: Services shortcuts */}
