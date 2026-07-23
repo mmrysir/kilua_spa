@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import seoSchema from "../../seo.json";
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
@@ -48,6 +49,14 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${plusJakarta.variable} h-full antialiased scroll-smooth`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoSchema),
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans bg-[#FDFBF7] text-[#2C3230]">
         {children}
       </body>

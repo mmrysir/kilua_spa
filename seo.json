@@ -1,0 +1,345 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DaySpa",
+      "@id": "https://www.kiluaspa.com/#entity",
+      "name": "Kilua Spa & Massage",
+      "alternateName": "Kilua Spa",
+      "url": "https://www.kiluaspa.com",
+      "logo": "https://www.kiluaspa.com/logo.jpg",
+      "image": [
+        "https://www.kiluaspa.com/logo.jpg",
+        "https://www.kiluaspa.com/hero.jpg"
+      ],
+      "description": "Experience luxury traditional massages, beauty therapies, foot & hand grooming, waxing, henna art and more at Kilua Spa & Massage in Nungwi, Zanzibar. A serene tropical wellness escape.",
+      "telephone": "+255776785002",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Malika Nungwi Hotel",
+        "addressLocality": "Nungwi",
+        "addressRegion": "Zanzibar",
+        "addressCountry": "TZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-5.7233",
+        "longitude": "39.2978"
+      },
+      "priceRange": "$10 – $45",
+      "currenciesAccepted": "USD, TZS",
+      "paymentAccepted": "Cash, WhatsApp Booking",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Kilua Spa Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Therapy Massages",
+            "description": "Soothing and traditional massage treatments designed to release stress and restore balance.",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Warm Herbal Oil Massage",
+                  "description": "Very traditional and soothing massage done using warm herbal oil mixed with spices and long soothing movements helping you release all accumulated stress."
+                },
+                "price": "20",
+                "priceCurrency": "USD",
+                "description": "30 Mins from $20, 60 Mins $35"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Relaxing Massage",
+                  "description": "Exotic treatment that rebalances the body and the mind through the dedicated hands of our therapist.",
+                  "duration": "PT60M"
+                },
+                "price": "30",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mvua Africa Hot Stone Massage",
+                  "description": "Exotic treatment that rebalances the body, soul and mind by placing heated volcanic stones on different pressure points.",
+                  "duration": "PT75M"
+                },
+                "price": "45",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Aromatherapy Massage",
+                  "description": "Holistic medicinal relaxing massage combined with essential oils, candles and incense.",
+                  "duration": "PT60M"
+                },
+                "price": "35",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Deep Tissue Massage",
+                  "description": "Deeper muscle work releasing accumulated stress.",
+                  "duration": "PT60M"
+                },
+                "price": "40",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Feet and Leg Massage",
+                  "description": "Get relaxed after a long walk on the beach.",
+                  "duration": "PT40M"
+                },
+                "price": "25",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Stress Relief Massage",
+                  "description": "Deep style massage highlighting the back, shoulders and neck.",
+                  "duration": "PT30M"
+                },
+                "price": "15",
+                "priceCurrency": "USD"
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Beauty Therapy",
+            "description": "Traditional facial treats that nourish and renew your skin using natural tropical ingredients.",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Africa Wellbeing Face Treat (Facial)",
+                  "description": "Traditional old age specialty to renew & refresh all skin types using natural ingredients."
+                },
+                "price": "30",
+                "priceCurrency": "USD"
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Hands & Feet Grooming",
+            "description": "Thorough grooming for hands or feet using rich natural oils.",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Pedicure" },
+                "price": "25",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Manicure" },
+                "price": "20",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Foot Scrub & Massage",
+                  "duration": "PT30M"
+                },
+                "price": "20",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Combination of Feet and Hands"
+                },
+                "price": "30",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Pedicure with Gel Polish"
+                },
+                "price": "30",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Manicure with Gel Polish"
+                },
+                "price": "25",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Combination of Feet and Hands with Gel Polish"
+                },
+                "price": "40",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Acrylic Nails (Tips, Stick-ons)",
+                  "description": "Tips and stick-ons done professionally."
+                },
+                "price": "35",
+                "priceCurrency": "USD"
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Waxing & Styling",
+            "description": "Professional waxing, traditional hair plaiting, and elegant henna artistic designs.",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Brazilian Waxing" },
+                "price": "40",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Bikini Wax" },
+                "price": "20",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Back Waxing" },
+                "price": "25",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Full Leg Waxing" },
+                "price": "35",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Half Leg Waxing" },
+                "price": "20",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Full Arm Waxing" },
+                "price": "25",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Half Arm Waxing" },
+                "price": "15",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": { "@type": "Service", "name": "Under Arms Waxing" },
+                "price": "10",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Lip, Chin & Eyebrow Waxing"
+                },
+                "price": "15",
+                "priceCurrency": "USD"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Hair Plaiting",
+                  "description": "Elegant traditional and modern hair styling, braids or cornrows."
+                },
+                "price": "30",
+                "priceCurrency": "USD",
+                "description": "From $30"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Henna Art",
+                  "description": "Beautiful organic henna artistic drawing on hands or feet."
+                },
+                "price": "10",
+                "priceCurrency": "USD"
+              }
+            ]
+          }
+        ]
+      },
+      "parentOrganization": {
+        "@type": "Person",
+        "@id": "https://www.berinajumwa.com/#owner",
+        "name": "Berina Jumwa",
+        "url": "https://www.berinajumwa.com"
+      },
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.kiluaspa.com/#website",
+      "url": "https://www.kiluaspa.com",
+      "name": "Kilua Spa & Massage",
+      "description": "Luxury traditional spa and massage treatments in Nungwi, Zanzibar.",
+      "publisher": {
+        "@id": "https://www.kiluaspa.com/#entity"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}

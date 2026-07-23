@@ -1,0 +1,42 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Kilua Spa & Massage",
+  "image": "https://kiluaspa.com/logo.jpg",
+  "@id": "https://kiluaspa.com",
+  "url": "https://kiluaspa.com",
+  "telephone": "+255776785002",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Malika Nungwi Hotel",
+    "addressLocality": "Nungwi, Zanzibar",
+    "addressCountry": "TZ"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": []
+}
