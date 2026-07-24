@@ -20,6 +20,12 @@ export const menuCategories: MenuCategory[] = [
     description: "Soothing and traditional massage treatments designed to release stress and restore balance.",
     items: [
       {
+        name: "Hot Herbal Elakizhi Massage",
+        price: 35,
+        duration: "75 Mins",
+        description: "A traditional Ayurvedic bolus massage using warm herbal poultices that improves muscle strength, enhances joint mobility and helps reduce inflammation.",
+      },
+      {
         name: "Warm Herbal Oil Massage",
         price: 35,
         priceOptions: [
